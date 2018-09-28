@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "History";
+}
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<head>
+    <title>CIT Lab Information - History</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="@Url.Action("Index","/")">CIT Lab Information</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Index","/")">Home</a></li>
+                    <li><a href="@Url.Action("Index","History")">History</a></li>
+                    <li class="active"><a href="@Url.Action("Index","Contact")">Contact</a></li>
+                    <li><a href="@Url.Action("Index","Info")">Info</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <h1>Contact</h1>
+            <p>
+                contact info
+            </p>
+        </div>
+        <p></p>
+        <p></p>
+    </div>
+</body>
