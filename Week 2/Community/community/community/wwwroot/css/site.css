@@ -1,0 +1,28 @@
+﻿ #incomingMessages, #outgoingMessages, #composeMessage { 
+     display:none; 
+
+ }
+ .message-data, .contact-data {
+    text-align: left;
+    max-width: 50%;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.message-row:nth-child(even){
+    background-color:lightgray;
+}
+.message-data {
+    margin-left: 150px;
+    width: 75%;
+}
+
+ .header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    font-weight:bold;
+    padding:5px 5px 5px 5px;
+    font-family:Arial;
+    font-size:14pt;
+}

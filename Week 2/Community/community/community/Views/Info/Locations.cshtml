@@ -1,0 +1,12 @@
+﻿@model LocationViewerModel;
+@{
+    ViewData["Title"] = "Locations";
+    Layout = "/views/shared/_Layout.cshtml";
+}
+
+<h2>Locations</h2>
+
+@foreach (LocationModel location in Model.locations)
+{
+    <br /><a href="@location.link" target="new">@location.name</a>
+}

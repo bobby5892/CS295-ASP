@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+    Layout = "/views/shared/_Layout.cshtml";
+}
+
+<h1>Contact</h1>
+
+   <form method="post">
+       <div class="container-fluid">
+           <div class="row">
+               <label for="from" class="col-sm-2">From</label>
+               <input type="text" name="from" class="col-sm" />
+           </div>
+           <div class="row">
+               <label for="to" class="col-sm-2">To</label>
+               <input type="text" name="to" class="col-sm" />
+           </div>
+           <div class="row">
+               <label for="message" class="col-sm-2">Message</label>
+               <textarea name="message" class="col-sm-8"></textarea>
+           </div>
+           <div class="row">
+               <input type="submit" class="btn btn-primary"/>
+           </div>
+        </div>
+</form>

@@ -1,0 +1,10 @@
+﻿@model PersonsViewerModel
+@{
+    Layout = "/views/shared/_Layout.cshtml";
+}
+People
+
+@foreach (PersonModel person in Model.persons)
+{
+    <br /><a href="@person.link" target="new">@person.name</a>
+}

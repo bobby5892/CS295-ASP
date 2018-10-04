@@ -1,0 +1,11 @@
+﻿@model MessageModel;
+@{
+    ViewData["Title"] = "Sent Message";
+    Layout = "/views/shared/_Layout.cshtml";
+}
+
+Your message has not been sent to @Model.to.name &lt;@Model.to.emailAddress&gt;
+<br /><label>Message Contents</label>
+<br /><pre>
+@Model.message
+</pre>

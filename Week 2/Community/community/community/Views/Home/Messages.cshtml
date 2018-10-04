@@ -1,0 +1,76 @@
+﻿@model  MessageViewerModel
+
+@{
+
+    ViewData["Title"] = "List Messages";
+    Layout = "/views/shared/_Layout.cshtml";
+}
+
+
+
+<ul class="nav nav-tabs">
+    <li id="TabIncoming"><a href="#" id="btnIncoming">Incoming</a></li>
+    <li id="TabSent"><a href="#" id="btnSent">Sent</a></li>
+    <li id="TabCompose"><a href="#" id="btnCompose">Compose</a></li>
+</ul>
+
+<div class="well" id="incomingMessages">
+    <h3>Incoming Messages</h3>
+    <table>
+        <tr>
+            <td class="header">From</td>
+            <td class="header">Message</td>
+        </tr>
+       @foreach (var item in Model.messagesIncoming)
+        {
+            <tr class="message-row">
+                <td class="contact-data">@item.from.name &lt;@item.from.emailAddress&gt;</td>
+                <td class="message-data">@item.message</td>
+            </tr>
+        }
+           
+    </table>
+</div>
+<div class="well" id="outgoingMessages">
+    <h3>Outgoing Messages</h3>
+    <table>
+        <tr>
+            <td class="header">To</td>
+            <td class="header">Message</td>
+        </tr>
+        @foreach (var item in Model.messagesOutgoing)
+        {
+            <tr class="message-row">
+                <td class="contact-data">@item.to.name &lt;@item.to.emailAddress&gt;</td>
+                <td class="message-data">@item.message</td>
+            </tr>
+        }
+
+    </table>
+</div>
+<div class="well" id="composeMessage">
+    <div class="container-fluid">
+        <h3>Compose Message</h3>
+        <form method="post">
+            <input type="hidden" name="emailAddress" value="@Model.currentUser.emailAddress" />
+            <div class="row col-lg-10">
+                <label for="to">To</label>
+                <select name="to">
+                    @foreach (UserModel user in Model.users)
+                    {
+                        <option value="@user.name">@user.name&lt;@user.emailAddress&gt; </option>
+                    }
+                </select>
+            </div>
+            <div class="row col-lg-10">
+                <label for="message">Message</label>
+                <br /><textarea name="message" class="col-lg-10"></textarea>
+            </div>
+            <div class="row col-lg-10">
+                <input type="submit" value="send message" />
+            </div>
+        </form>
+    </div>
+   
+</div>
+<script src="~/js/messages.js"></script>

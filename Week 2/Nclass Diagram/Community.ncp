@@ -1,0 +1,52 @@
+<Project>
+  <Name>Community</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>User</Name>
+        <Access>Public</Access>
+        <Location left="72" top="93" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string name</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Message</Name>
+        <Access>Public</Access>
+        <Location left="274" top="93" />
+        <Size width="297" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int message</Member>
+        <Member type="Field">public DateTime timestamp</Member>
+        <Member type="Field">public User toUser</Member>
+        <Member type="Field">public User fromUser</Member>
+        <Member type="Method">public bool send(string message, int user, int fromUser)</Member>
+        <Member type="Method">public Message read(int id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Person</Name>
+        <Access>Public</Access>
+        <Location left="862" top="93" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string person</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Location</Name>
+        <Access>Public</Access>
+        <Location left="607" top="93" />
+        <Size width="231" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string name</Member>
+        <Member type="Field">public string link</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
