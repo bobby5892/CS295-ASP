@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace community.Models
 {
-    public class LocationViewerModel
+    public class PersonsViewModel
     {
-        public List<LocationModel> locations = new List<LocationModel>();
+        public List<Person> Persons = new List<Person>();
     }
 }

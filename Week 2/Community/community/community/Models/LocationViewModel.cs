@@ -5,10 +5,8 @@ using System.Threading.Tasks;
 
 namespace community.Models
 {
-    public class UserModel
+    public class LocationViewModel
     {
-        public string name { get; set; }
-        public string emailAddress { get; set; }
-       
+        public List<Location> Locations = new List<Location>();
     }
 }

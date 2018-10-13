@@ -27,46 +27,52 @@ namespace community.Controllers
         public IActionResult Messages()
         {
             /* Hard Coded - Normally we would pull from entity framework and then we would have users as a list of user as users*/
-            List<UserModel> users = new List<UserModel>();
-            users.Add(new UserModel() { emailAddress = "bob@example.com", name = "Bob B." }); // 0
-            users.Add(new UserModel() { emailAddress = "bill@example.com", name = "Bill B." });
-            users.Add(new UserModel() { emailAddress = "steve@example.com", name = "Steve B." });
-            users.Add(new UserModel() { emailAddress = "stan@example.com", name = "Stan B." });
-            users.Add(new UserModel() { emailAddress = "doug@example.com", name = "Doug B." });
+            List<User> users = new List<User>();
+            users.Add(new User() { EmailAddress = "bob@example.com", Name = "Bob B." }); // 0
+            users.Add(new User() { EmailAddress = "bill@example.com", Name = "Bill B." });
+            users.Add(new User() { EmailAddress = "steve@example.com", Name = "Steve B." });
+            users.Add(new User() { EmailAddress = "stan@example.com", Name = "Stan B." });
+            users.Add(new User() { EmailAddress = "doug@example.com", Name = "Doug B." });
 
-            UserModel currentUser = users[0];
+            User currentUser = users[0];
 
-            List<MessageModel> messagesSent = new List<MessageModel>();
+            List<Message> messagesSent = new List<Message>();
             // Sent Messages
-            messagesSent.Add(new MessageModel(){from=users[0],to=users[1],message="Hey Bill, whats up"});
-            messagesSent.Add(new MessageModel() { from = users[0], to = users[2], message = "Hey Steve, whats up" });
-            messagesSent.Add(new MessageModel() { from = users[0], to = users[3], message = "Hey Stan, whats up" });
+            messagesSent.Add(new Message(){From=users[0],To=users[1],Msge="Hey Bill, whats up"});
+            messagesSent.Add(new Message() { From = users[0], To = users[2], Msge = "Hey Steve, whats up" ,IsPriority=true});
+            messagesSent.Add(new Message() { From = users[0], To = users[3], Msge = "Hey Stan, whats up" });
             // To Messages
-            List<MessageModel> messagesReceived = new List<MessageModel>();
-            messagesReceived.Add(new MessageModel() { from = users[3], to = users[0], message = "Hey Bob, this is Stan. " });
-            messagesReceived.Add(new MessageModel() { from = users[4], to = users[0], message = "Hey Bob, this is Doug. " });
-            messagesReceived.Add(new MessageModel() { from = users[2], to = users[0], message = "Hey Bob, this is Steve. " });
+            List<Message> messagesReceived = new List<Message>();
+            messagesReceived.Add(new Message() { From = users[3], To = users[0], Msge = "Hey Bob, this is Stan. " });
+            messagesReceived.Add(new Message() { From = users[4], To = users[0], Msge = "Hey Bob, this is Doug. " ,IsPriority=true});
+            messagesReceived.Add(new Message() { From = users[2], To = users[0], Msge = "Hey Bob, this is Steve. " });
+
+            // Wk 3 - Sort with Lambda
+            messagesReceived.Sort((msg1, msg2) => msg1.Timestamp.CompareTo(msg2.Timestamp));
+            messagesSent.Sort((msg1, msg2) => msg1.Timestamp.CompareTo(msg2.Timestamp));
 
             // Now lets wrap it up in our ViewModel
 
-            MessageViewerModel messageViewModel = new MessageViewerModel() { currentUser=currentUser,users=users,
-                messagesIncoming = messagesReceived,
-            messagesOutgoing=messagesSent};
+            MessageViewModel messageViewModel = new MessageViewModel() { CurrentUser=currentUser,Users=users,
+                MessagesIncoming = messagesReceived,
+            MessagesOutgoing=messagesSent};
 
             return View("Messages", messageViewModel);
         }
         [HttpPost]
-        public IActionResult Messages(string to, string emailAddress, string message)
+        public IActionResult Messages(string to, string emailAddress, string message, string subject,bool isPriority)
         {
             // Do message send here
 
             // then show result
 
             // if failed
-            MessageModel msg = new MessageModel();
-            msg.to = new UserModel() { name = to, emailAddress = emailAddress };
-            msg.from = new UserModel() { name = "self", emailAddress = "me@example.com" };
-            msg.message = message;
+            Message msg = new Message();
+            msg.To = new User() { Name = to, EmailAddress = emailAddress };
+            msg.From = new User() { Name = "self", EmailAddress = "me@example.com" };
+            msg.Subject = subject;
+            msg.Msge = message;
+            msg.IsPriority = isPriority;
 
 
             return View("MessageSent",msg);

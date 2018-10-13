@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace community.Models
 {
-    public class LocationModel
+    public class User
     {
-        public string name { get; set; }
-        public string link { get; set; }
+        public string Name { get; set; }
+        public string EmailAddress { get; set; }
+       
     }
 }

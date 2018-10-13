@@ -1,10 +1,10 @@
-﻿@model PersonsViewerModel
+﻿@model PersonsViewModel
 @{
     Layout = "/views/shared/_Layout.cshtml";
 }
 People
 
-@foreach (PersonModel person in Model.persons)
+@foreach (Person person in Model.Persons)
 {
-    <br /><a href="@person.link" target="new">@person.name</a>
+    <br /><a href="@person.Link" target="new">@person.Name</a>
 }

@@ -1,4 +1,4 @@
-﻿@model  MessageViewerModel
+﻿@model MessageViewModel
 
 @{
 
@@ -7,6 +7,10 @@
 }
 
 
+@{ /*
+   This is the main content of the page
+   Message Viewing should be moved into a component to keep DRY
+  */}
 
 <ul class="nav nav-tabs">
     <li id="TabIncoming"><a href="#" id="btnIncoming">Incoming</a></li>
@@ -19,16 +23,24 @@
     <table>
         <tr>
             <td class="header">From</td>
+            <td class="header">Timestamp</td>
             <td class="header">Message</td>
         </tr>
-       @foreach (var item in Model.messagesIncoming)
+        @foreach (var item in Model.MessagesIncoming)
         {
-            <tr class="message-row">
-                <td class="contact-data">@item.from.name &lt;@item.from.emailAddress&gt;</td>
-                <td class="message-data">@item.message</td>
+            // Add Flag for Priority (should be converted to a View Component to keep DRY)
+            string priorityCSS = "";
+            if (item.IsPriority) { priorityCSS = " priority"; }
+
+            <tr class="message-row @priorityCSS">
+                <td class="contact-data ">
+                    @item.From.Name &lt;@item.From.EmailAddress&gt;
+                </td>
+                <td class="contact-data">@item.Timestamp</td>
+                <td class="message-data">@item.Msge</td>
             </tr>
         }
-           
+
     </table>
 </div>
 <div class="well" id="outgoingMessages">
@@ -36,13 +48,19 @@
     <table>
         <tr>
             <td class="header">To</td>
+            <td class="header">Timestamp</td>
             <td class="header">Message</td>
         </tr>
-        @foreach (var item in Model.messagesOutgoing)
+        @foreach (var item in Model.MessagesOutgoing)
         {
-            <tr class="message-row">
-                <td class="contact-data">@item.to.name &lt;@item.to.emailAddress&gt;</td>
-                <td class="message-data">@item.message</td>
+
+            string priorityCSS = "";
+            if (item.IsPriority) { priorityCSS = " priority"; }
+
+            <tr class="message-row @priorityCSS">
+                <td class="contact-data">@item.To.Name &lt;@item.To.EmailAddress&gt;</td>
+                <td class="contact-data">@item.Timestamp</td>
+                <td class="message-data">@item.Msge</td>
             </tr>
         }
 
@@ -52,16 +70,23 @@
     <div class="container-fluid">
         <h3>Compose Message</h3>
         <form method="post">
-            <input type="hidden" name="emailAddress" value="@Model.currentUser.emailAddress" />
+            <input type="hidden" name="emailAddress" value="@Model.CurrentUser.EmailAddress" />
             <div class="row col-lg-10">
                 <label for="to">To</label>
                 <select name="to">
-                    @foreach (UserModel user in Model.users)
+                    @foreach (User user in Model.Users)
                     {
-                        <option value="@user.name">@user.name&lt;@user.emailAddress&gt; </option>
+                        <option value="@user.Name">@user.Name&lt;@user.EmailAddress&gt; </option>
                     }
                 </select>
+                Priority<input type="checkbox" name="isPriority" value="true" />
             </div>
+            <div class="row col-lg-10">
+                <label for="subject">Subject</label>
+                <br /><input type="text"name="Subject" class="col-lg-10">
+
+            </div>
+
             <div class="row col-lg-10">
                 <label for="message">Message</label>
                 <br /><textarea name="message" class="col-lg-10"></textarea>
@@ -71,6 +96,6 @@
             </div>
         </form>
     </div>
-   
+
 </div>
 <script src="~/js/messages.js"></script>

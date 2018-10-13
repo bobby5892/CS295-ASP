@@ -20,24 +20,28 @@ namespace community.Controllers
         }
         public IActionResult Locations()
         {
-            List<LocationModel> locations = new List<LocationModel>();
-            locations.Add(new LocationModel() {name="Excite",link="http://excite.com" });
-            locations.Add(new LocationModel() { name = "Google", link = "http://google.com" });
-            locations.Add(new LocationModel() { name = "Lane Community College", link = "http://lanecc.edu" });
-            locations.Add(new LocationModel() { name = "Eugene Programming", link = "http://eugeneprogramming.com" });
-            LocationViewerModel locationViewerModel = new LocationViewerModel();
-            locationViewerModel.locations = locations;
-            return View("Locations", locationViewerModel);
+            List<Location> locations = new List<Location>();
+            locations.Add(new Location() {Name="Excite",Link="http://excite.com" });
+            locations.Add(new Location() { Name = "Google", Link = "http://google.com" });
+            locations.Add(new Location() { Name = "Lane Community College", Link = "http://lanecc.edu" });
+            locations.Add(new Location() { Name = "Eugene Programming", Link = "http://eugeneprogramming.com" });
+            // Wk3 sort requirement
+            locations.Sort((loc1, loc2) => loc1.Name.CompareTo(loc2.Name));
+            LocationViewModel locationViewModel = new LocationViewModel();
+            locationViewModel.Locations = locations;
+            return View("Locations", locationViewModel);
         }
         public IActionResult People()
         {
-            List<PersonModel> persons = new List<PersonModel>();
-            persons.Add(new PersonModel() { name="Daniel Steel",link= "https://www.biography.com/people/danielle-steel"});
-            persons.Add(new PersonModel() { name = "Tim Schafer", link = " https://www.biography.com/people/tim-schafer" });
+            List<Person> persons = new List<Person>();
+            persons.Add(new Person() { Name="Daniel Steel",Link= "https://www.biography.com/people/danielle-steel"});
+            persons.Add(new Person() { Name = "Tim Schafer", Link = " https://www.biography.com/people/tim-schafer" });
+            // Wk3 sort requirement
+            persons.Sort((pers1, pers2) => pers1.Name.CompareTo(pers2.Name));
 
-            PersonsViewerModel personsViewerModel = new PersonsViewerModel();
-            personsViewerModel.persons = persons;
-            return View("People", personsViewerModel);
+            PersonsViewModel personsViewModel = new PersonsViewModel();
+            personsViewModel.Persons = persons;
+            return View("People", personsViewModel);
         }
     }
 }

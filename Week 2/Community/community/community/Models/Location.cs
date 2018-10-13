@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace community.Models
 {
-    public class PersonsViewerModel
+    public class Location
     {
-        public List<PersonModel> persons = new List<PersonModel>();
+        public string Name { get; set; }
+        public string Link { get; set; }
     }
 }
