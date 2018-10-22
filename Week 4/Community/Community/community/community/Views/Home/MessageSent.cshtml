@@ -1,0 +1,18 @@
+﻿@model Message;
+@{
+    ViewData["Title"] = "Sent Message";
+    Layout = "/views/shared/_Layout.cshtml";
+}
+
+Your message has not been sent to @Model.To.Name &lt;@Model.To.EmailAddress&gt;
+<br /><label>Message Contents</label>
+<br /><pre>
+
+@if (Model.IsPriority)
+{
+<br /><span>Message flagged with priority</span>
+        
+}
+<b>Subject:</b>@Model.Subject
+@Model.Msge
+</pre>
