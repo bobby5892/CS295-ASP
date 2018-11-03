@@ -12224,11 +12224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rob\\Documents\\CIS295\\CS295-ASP\\Week 4\\Community\\Community\\community\\community\\community.csproj",
+      "projectUniqueName": "C:\\Users\\Rob\\Documents\\CS295\\CS295-ASP\\Week 4\\Community\\Community\\community\\community\\community.csproj",
       "projectName": "community",
-      "projectPath": "C:\\Users\\Rob\\Documents\\CIS295\\CS295-ASP\\Week 4\\Community\\Community\\community\\community\\community.csproj",
+      "projectPath": "C:\\Users\\Rob\\Documents\\CS295\\CS295-ASP\\Week 4\\Community\\Community\\community\\community\\community.csproj",
       "packagesPath": "C:\\Users\\Rob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rob\\Documents\\CIS295\\CS295-ASP\\Week 4\\Community\\Community\\community\\community\\obj\\",
+      "outputPath": "C:\\Users\\Rob\\Documents\\CS295\\CS295-ASP\\Week 4\\Community\\Community\\community\\community\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
