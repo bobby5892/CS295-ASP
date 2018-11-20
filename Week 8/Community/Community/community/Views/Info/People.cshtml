@@ -1,0 +1,11 @@
+﻿@model PersonsViewModel
+@{
+    ViewData["Title"] = "People - Via Layout 2";
+    Layout = "/views/shared/_Layout2.cshtml";
+}
+People
+
+@foreach (Person person in Model.Persons)
+{
+    <br /><a href="@person.Link" target="new">@person.Name</a>
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAD7rN9sttbEadjgH5gZe60wAAAAACAAAAAAAQZgAAAAEAACAAAADYTm4xT/7ejV+ZRbtyAs31Hg44epS/Y3wmg1EgtSQ21AAAAAAOgAAAAAIAACAAAAB/94K1k2rLYGB4tsSCjstNQIB9zF76YtOeJ157MIJVt4AAAACgb2frlz5WtSOGCFpWjY36PsukbZLhQisiKYnb/BdCbtcXLSvh7yyEVxUIdBg9XnQ2mKhBnRw2xO11fijOzX592PWRFeQbWvBi9vQrICEw0ZZ09Z96ZPRtT87SZVO0Uhq075+poI2htiZyr4VmwhGCv+jprKHTldTy7ShPXMLoR0AAAABxFhv8ol+ydKcduKooHY6Bo7L5MWRe1/tyl9C/hSe7xtJTbvlhzyako9SHHG36u/nfbP74kFTYAzMTQxprQg3K</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Local">
+      <Value>Data Source=tcp:community20181119064101dbserver.database.windows.net,1433%3bInitial Catalog=community20181119064101_db%3bUser Id=robert%40community20181119064101dbserver%3bPassword=Dabonz3d#</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

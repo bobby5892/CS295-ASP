@@ -1,0 +1,108 @@
+﻿@model MessageViewModel
+
+@{
+
+    ViewData["Title"] = "List Messages";
+    Layout = "/views/shared/_Layout.cshtml";
+}
+
+
+@{ /*
+                   This is the main content of the page
+                   Message Viewing should be moved into a component to keep DRY
+                  */}
+
+<ul class="nav nav-tabs">
+    <li id="TabIncoming"><a href="#" id="btnIncoming">Incoming</a></li>
+    <li id="TabSent"><a href="#" id="btnSent">Sent</a></li>
+    <li id="TabCompose"><a href="#" id="btnCompose">Compose</a></li>
+</ul>
+
+<div class="well" id="incomingMessages">
+    <h3>Incoming Messages</h3>
+    <table>
+        <tr>
+            <td></td>
+            <td class="header">From</td>
+            <td class="header">Timestamp</td>
+            <td class="header" colspan="2">Message</td>
+        </tr>
+        @{int count = 0;}
+        &nbsp;
+            @foreach (var item in Model.MessagesIncoming)
+            {
+                // Add Flag for Priority (should be converted to a View Component to keep DRY)
+                string priorityCSS = "";
+                if (item.IsPriority) { priorityCSS = " priority"; }
+
+            <tr class="message-row @priorityCSS">
+                <td><button class="reply-button" data-name="@item.From.Name" data-from="@count" data-subject="@item.Subject" data-message="@item.Msge" onclick="messages.reply(this);">Reply</button> </td>
+                <td class="contact-data">
+                    @item.From.Name &lt;@item.From.EmailAddress&gt;
+                </td>
+                <td class="contact-data">@item.Timestamp</td>
+                <td>@item.Subject</td>
+                <td class="message-data">@item.Msge</td>
+            </tr>
+            count++;
+        }
+
+    </table>
+</div>
+<div class="well" id="outgoingMessages">
+    <h3>Outgoing Messages</h3>
+    <table>
+        <tr>
+            <td class="header">To</td>
+            <td class="header">Timestamp</td>
+            <td class="header">Message</td>
+        </tr>
+        @foreach (var item in Model.MessagesOutgoing)
+        {
+
+            string priorityCSS = "";
+            if (item.IsPriority) { priorityCSS = " priority"; }
+
+            <tr class="message-row @priorityCSS">
+                <td class="contact-data">@item.To.Name &lt;@item.To.EmailAddress&gt;</td>
+                <td class="contact-data">@item.Timestamp</td>
+                <td class="message-data">@item.Msge</td>
+            </tr>
+        }
+
+    </table>
+</div>
+<div class="well" id="composeMessage">
+    <div class="container-fluid">
+        <h3>Compose Message</h3>
+        <form method="post">
+            <input type="hidden" name="emailAddress" value="@Model.CurrentUser.EmailAddress" />
+            <div class="row col-lg-10">
+                <label for="to">To</label>
+                <select name="to" id="composeTo">
+                    @foreach (User user in Model.Users)
+                    {
+                        <option value="@user.Name">@user.Name&lt;@user.EmailAddress&gt; </option>
+                    }
+                </select>
+                Priority<input type="checkbox" name="isPriority" value="true" />
+            </div>
+            <div class="row col-lg-10">
+                <label for="subject">Subject</label>
+                <br /><input type="text"name="Subject" id="composeSubject"class="col-lg-10">
+
+            </div>
+
+            <div class="row col-lg-10">
+                <label for="message">Message</label>
+                <br />
+                <textarea  name="message" class="col-lg-10" style="height:300px;" ></textarea>
+            </div>
+            <div class="row col-lg-10">
+                <input type="submit" value="send message" />
+            </div>
+        </form>
+    </div>
+
+</div>
+<script src="~/js/messages.js"></script>

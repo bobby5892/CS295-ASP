@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="community20181119064101" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\code\\CS295-ASP\\Week\ 8\\Community\\Community\\community\\obj\\Release\\netcoreapp2\.1\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>
