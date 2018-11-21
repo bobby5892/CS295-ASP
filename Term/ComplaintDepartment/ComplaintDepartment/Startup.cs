@@ -9,9 +9,13 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ComplaintDepartment.Models.Repositories;
+
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.EntityFrameworkCore;
 
 namespace ComplaintDepartment
-{
+    {
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -31,6 +35,9 @@ namespace ComplaintDepartment
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddTransient<IComplaintRepository, ComplaintRepository>();
+            services.AddTransient<ICommentRepository, CommentRepository>();
+            services.AddDbContext<AppDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:Local"]));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
