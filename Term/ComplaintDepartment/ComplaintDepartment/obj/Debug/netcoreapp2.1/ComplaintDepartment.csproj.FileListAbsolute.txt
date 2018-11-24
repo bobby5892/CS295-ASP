@@ -36,3 +36,4 @@ C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcore
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Complaint\SearchResults.g.cshtml.cs
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Complaint\ComplaintAdded.g.cshtml.cs
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Complaint\GetComplaint.g.cshtml.cs
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

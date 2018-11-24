@@ -110,6 +110,13 @@ namespace ComplaintDepartment.Controllers
             return Json(this.ComplaintRepo.AddComplaint(newComplaint));
            
         }
-
+        public JsonResult GetComplaints()
+        {
+            return Json(this.ComplaintRepo.Complaints.ToArray());
+        }
+        public JsonResult GetComments()
+        {
+            return Json(this.CommentRepo.Comments.ToArray());
+        }
     }
 }
