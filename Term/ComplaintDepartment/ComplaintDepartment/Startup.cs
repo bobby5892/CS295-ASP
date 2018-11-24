@@ -61,6 +61,13 @@ namespace ComplaintDepartment
 
             app.UseMvc(routes =>
             {
+                //Custom route for getting single complaint
+                routes.MapRoute(
+                   "GetComplaint",
+                   "Complaint/Get/{id}",
+                   new { controller = "Complaint", action = "GetComplaint" }
+                );
+                   
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

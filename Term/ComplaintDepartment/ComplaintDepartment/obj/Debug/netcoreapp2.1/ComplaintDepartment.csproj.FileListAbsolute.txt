@@ -2,7 +2,6 @@ C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\bin\Debug\netcore
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\bin\Debug\netcoreapp2.1\ComplaintDepartment.runtimeconfig.json
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\bin\Debug\netcoreapp2.1\ComplaintDepartment.runtimeconfig.dev.json
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\bin\Debug\netcoreapp2.1\ComplaintDepartment.dll
-C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\ComplaintDepartment.csprojAssemblyReference.cache
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\ComplaintDepartment.csproj.CoreCompileInputs.cache
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\ComplaintDepartment.RazorAssemblyInfo.cache
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\ComplaintDepartment.RazorAssemblyInfo.cs
@@ -11,10 +10,7 @@ C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcore
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\ComplaintDepartment.TagHelpers.input.cache
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\ComplaintDepartment.TagHelpers.output.cache
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\ComplaintDepartment.RazorCoreGenerate.cache
-C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
-C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
-C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
@@ -36,3 +32,7 @@ C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcore
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Complaint\List.g.cshtml.cs
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Complaint\MarkComplete.g.cshtml.cs
 C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Complaint\Search.g.cshtml.cs
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\ComplaintDepartment.csprojAssemblyReference.cache
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Complaint\SearchResults.g.cshtml.cs
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Complaint\ComplaintAdded.g.cshtml.cs
+C:\code\CS295-ASP\Term\ComplaintDepartment\ComplaintDepartment\obj\Debug\netcoreapp2.1\Razor\Views\Complaint\GetComplaint.g.cshtml.cs

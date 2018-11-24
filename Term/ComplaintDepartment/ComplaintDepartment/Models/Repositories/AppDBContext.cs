@@ -8,7 +8,7 @@ namespace ComplaintDepartment.Models.Repositories
     public class AppDBContext : DbContext
     {
         public AppDBContext(DbContextOptions<AppDBContext> options) : base(options){ }
-        public DbSet<Complaint> Complaints;
-        public DbSet<Comment> Comments;
+        public DbSet<Complaint> Complaints { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }
