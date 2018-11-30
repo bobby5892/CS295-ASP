@@ -18,7 +18,7 @@ namespace ComplaintTests
     {
         public AppDBContext Context { get; set; }
         public ComplaintRepository ComplaintRepo;
-        //  Comments = this.context.Comments.ToList<Comment>();
+        
         public CommentRepository CommentRepo;
 
         public ComplaintTests()

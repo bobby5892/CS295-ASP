@@ -38,7 +38,7 @@ namespace ComplaintDepartment.Controllers
                 Create = DateTime.Now
             };
             this.ComplaintRepo.AddComplaint(newComplaint);
-            return RedirectToAction("List");
+            return View("ComplaintAdded",newComplaint);
         }
         public IActionResult List()
         {
