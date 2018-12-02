@@ -1,0 +1,21 @@
+﻿@model  Person
+@{
+    ViewData["Title"] = "Add People";
+    Layout = "/views/shared/_Layout2.cshtml";
+}
+
+<form asp-action="AddPerson" method="post" >
+    <div class="form-group">
+        <span asp-validation-for="Name" class="text-danger"></span>
+        <br /><label asp-for="Name"></label>
+        <br /><input asp-for="Name" />
+
+        <span asp-validation-for="Link" class="text-danger"></span>
+        <br /><label asp-for="Link"></label>
+        <br /><input asp-for="Link" />
+        <br />
+        <br /><input type="submit" value="Add Person" />
+
+    </div>
+
+</form>
