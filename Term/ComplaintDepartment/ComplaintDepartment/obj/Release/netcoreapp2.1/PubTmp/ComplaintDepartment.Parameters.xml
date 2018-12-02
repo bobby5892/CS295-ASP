@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="ComplaintDepartment20181124025148" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\code\\CS295-ASP\\Term\\ComplaintDepartment\\ComplaintDepartment\\obj\\Release\\netcoreapp2\.1\\PubTmp\\Out\\$" />
-  </parameter>
-  <parameter name="ComplaintDepartment.Models.Repositories.AppDBContext" description="" value="Data Source=tcp:complaintdepartment20181124025148dbserver.database.windows.net,1433;Initial Catalog=ComplaintDepartment20181124025148_db;User Id=robert@complaintdepartment20181124025148dbserver;Password=Dabonz3d#" tags="dbfullsql">
-    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\code\\CS295-ASP\\Term\\ComplaintDepartment\\ComplaintDepartment\\obj\\Release\\netcoreapp2\.1\\PubTmp\\EFSQLScripts\\ComplaintDepartment\.Models\.Repositories\.AppDBContext\.sql$" />
-  </parameter>
-</parameters>
